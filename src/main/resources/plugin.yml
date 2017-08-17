@@ -1,0 +1,4 @@
+name: CakeWarsLobby
+version: 0.0.1
+main: com.exorath.plugin.cakeWarsLobby.Main
+depend: [BaseLobby]
