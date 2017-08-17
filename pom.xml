@@ -75,13 +75,13 @@
         </dependency>
         <dependency>
             <groupId>com.github.Exorath</groupId>
-            <artifactId>ExoHUD</artifactId>
-            <version>1.0.8</version>
+            <artifactId>GameLevelLib</artifactId>
+            <version>0.0.2</version>
         </dependency>
         <dependency>
             <groupId>com.github.Exorath</groupId>
-            <artifactId>GameLevelLib</artifactId>
-            <version>0.0.1</version>
+            <artifactId>ExoHUD</artifactId>
+            <version>1.0.8</version>
         </dependency>
         <dependency>
             <groupId>com.github.exorath</groupId>
