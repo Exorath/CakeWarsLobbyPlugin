@@ -1,5 +1,6 @@
 package com.exorath.plugin.cakeWarsLobby;
 
+import com.exorath.plugin.base.ExoBaseAPI;
 import com.exorath.plugin.cakeWarsLobby.levels.LevelManager;
 import com.exorath.service.gamelevel.api.GameLevelServiceAPI;
 import org.bukkit.Bukkit;
@@ -12,12 +13,11 @@ public class Main extends JavaPlugin {
     public static final String CAKEWARS_GAME_ID = "cakewars";
     private static Main instance;
 
-    private LevelManager levelManager;
 
     @Override
     public void onEnable() {
         Main.instance = this;
-        this.levelManager = new LevelManager(new GameLevelServiceAPI(getGameLevelServiceAddress()), getLevelItemSlot());
+        ExoBaseAPI.getInstance().registerManager(new LevelManager(new GameLevelServiceAPI(getGameLevelServiceAddress()), getLevelItemSlot()));
     }
 
     private Integer getLevelItemSlot() {
