@@ -4,15 +4,13 @@ import com.exorath.exoHUD.DisplayPackage;
 import com.exorath.exoHUD.DisplayProperties;
 import com.exorath.exoHUD.HUDPackage;
 import com.exorath.exoHUD.plugin.HudAPI;
-import com.exorath.exoHUD.texts.ChatColorText;
-import com.exorath.exoHUD.texts.PlainText;
 import com.exorath.lib.gameLevel.GameLevelLib;
 import com.exorath.lib.gameLevel.LevelsConfig;
 import com.exorath.lib.gameLevel.hud.LevelBarText;
+import com.exorath.lib.gameLevel.hud.LevelText;
 import com.exorath.plugin.base.manager.ListeningManager;
 import com.exorath.plugin.cakeWarsLobby.Main;
 import com.exorath.service.gamelevel.api.GameLevelServiceAPI;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -41,7 +39,7 @@ public class LevelManager implements ListeningManager {
         System.out.println(Main.CAKEWARS_GAME_ID);
         System.out.println(event.getPlayer().getUniqueId().toString());
         HUDPackage hudPackage = HUDPackage.create(Arrays.asList(
-                ChatColorText.markup(PlainText.plain("Level: ")).color(ChatColor.WHITE),
+                new LevelText(Main.CAKEWARS_GAME_ID, gameLevelServiceAPI, event.getPlayer()),
                 new LevelBarText(Main.CAKEWARS_GAME_ID, gameLevelServiceAPI, event.getPlayer())));
         DisplayPackage displayPackage = new DisplayPackage(hudPackage, DisplayProperties.create(2.15, never()));
         HudAPI.getInstance().getHudPlayer(event.getPlayer()).getScoreboardLocation().addDisplayPackage(displayPackage);
