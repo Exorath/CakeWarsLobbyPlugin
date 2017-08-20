@@ -38,6 +38,8 @@ public class LevelManager implements ListeningManager {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
+        System.out.println(Main.CAKEWARS_GAME_ID);
+        System.out.println(event.getPlayer().getUniqueId().toString());
         HUDPackage hudPackage = HUDPackage.create(Arrays.asList(
                 ChatColorText.markup(PlainText.plain("Level: ")).color(ChatColor.WHITE),
                 new LevelBarText(Main.CAKEWARS_GAME_ID, gameLevelServiceAPI, event.getPlayer())));
