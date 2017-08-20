@@ -41,7 +41,7 @@ public class LevelManager implements ListeningManager {
         HUDPackage hudPackage = HUDPackage.create(Arrays.asList(
                 ChatColorText.markup(PlainText.plain("Level: ")).color(ChatColor.WHITE),
                 new LevelBarText(Main.CAKEWARS_GAME_ID, gameLevelServiceAPI, event.getPlayer())));
-        DisplayPackage displayPackage = new DisplayPackage(hudPackage, DisplayProperties.create(1, never()));
+        DisplayPackage displayPackage = new DisplayPackage(hudPackage, DisplayProperties.create(2.15, never()));
         HudAPI.getInstance().getHudPlayer(event.getPlayer()).getScoreboardLocation().addDisplayPackage(displayPackage);
     }
 
