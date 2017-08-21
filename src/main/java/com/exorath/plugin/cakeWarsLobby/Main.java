@@ -1,7 +1,9 @@
 package com.exorath.plugin.cakeWarsLobby;
 
 import com.exorath.plugin.base.ExoBaseAPI;
+import com.exorath.plugin.cakeWarsLobby.currency.CurrencyManager;
 import com.exorath.plugin.cakeWarsLobby.levels.LevelManager;
+import com.exorath.service.currency.api.CurrencyServiceAPI;
 import com.exorath.service.gamelevel.api.GameLevelServiceAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +22,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         Main.instance = this;
         ExoBaseAPI.getInstance().registerManager(new LevelManager(new GameLevelServiceAPI(getGameLevelServiceAddress()), getLevelItemSlot()));
+        ExoBaseAPI.getInstance().registerManager(new CurrencyManager(new CurrencyServiceAPI(getCurrencyServiceAddress())));
     }
 
     private Integer getLevelItemSlot() {
@@ -32,6 +35,13 @@ public class Main extends JavaPlugin {
             Main.terminate("Env GAMELEVEL_SERVICE_ADDRESS has no value.");
         return address;
     }
+    private String getCurrencyServiceAddress() {
+        String address = System.getenv("CURRENCY_SERVICE_ADDRESS");
+        if (address == null || address.equals(""))
+            Main.terminate("Env GAMELEVEL_SERVICE_ADDRESS has no value.");
+        return address;
+    }
+
 
     public static Main getInstance() {
         return instance;
