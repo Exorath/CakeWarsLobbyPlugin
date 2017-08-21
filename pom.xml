@@ -76,7 +76,7 @@
         <dependency>
             <groupId>com.github.exorath</groupId>
             <artifactId>GameLevelLib</artifactId>
-            <version>0.0.11</version>
+            <version>0.0.12</version>
         </dependency>
         <dependency>
             <groupId>com.github.Exorath</groupId>
@@ -92,6 +92,11 @@
             <groupId>com.github.exorath</groupId>
             <artifactId>ExoBasePlugin</artifactId>
             <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.exorath</groupId>
+            <artifactId>CurrencyService</artifactId>
+            <version>0.0.5</version>
         </dependency>
     </dependencies>
 

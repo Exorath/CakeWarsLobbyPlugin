@@ -11,6 +11,8 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class Main extends JavaPlugin {
     public static final String CAKEWARS_GAME_ID = "cakewars";
+    public static final String CURRENCY_NAME = "Crumbs";
+    public static final String CURRENCY_ID = "crumbs";
     private static Main instance;
 
 
